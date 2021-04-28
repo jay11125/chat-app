@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
+	<link rel="stylesheet" href="./css/styles.css" />
+	<head>
+		<title>Chat App</title>
+	</head>
+	<body>
+		<div class="centered-form">
+			<div class="centered-form__box">
+				<div class="title">
+					<img src="./images/icon.png" alt="icon" />
+					<h1 class="center">Join</h1>
+				</div>
+
+				<form id="join-form" action="">
+					<label>Display Name</label>
+					<input
+						id="username"
+						type="text"
+						name="username"
+						placeholder="Display Name"
+						autofocus
+						required
+					/>
+					<div id="tooltip" class="tooltip">
+						Username in use for this room !
+					</div>
+					<label>Room</label>
+					<div class="roomFlex">
+						<input
+							id="room"
+							type="text"
+							name="room"
+							placeholder="Room"
+							required
+						/>
+						<div id="live-rooms"></div>
+					</div>
+					<button id="join">Join</button>
+				</form>
+			</div>
+		</div>
+
+		<script type="text/html" id="live-rooms-template">
+			<select id="room-select" onchange="selectRoom(event)">
+				<option selected disabled hidden>Live Rooms</option>
+				{{#rooms}}
+				<option value="{{.}}">{{.}}</option>
+				{{/rooms}}
+			</select>
+		</script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="./js/join.js"></script>
+	</body>
+</html>

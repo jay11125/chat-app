@@ -56,8 +56,8 @@ button:disabled {
 		rgba(113, 255, 35, 0.8827906162464986) 0,
 		#00d4ff 100%
 	);
-	width: 100vw;
-	height: 100vh;
+	min-width: 100vw;
+	min-height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -71,6 +71,7 @@ button:disabled {
 	padding: 24px;
 	width: 330px;
 }
+
 #room-select {
 	color: #3d3d3d;
 	margin-left: 0.5em;
@@ -187,6 +188,7 @@ button:disabled {
 	padding: 12px 24px 0 5px;
 }
 li {
+	color: greenyellow;
 	margin: 16px;
 }
 .users {

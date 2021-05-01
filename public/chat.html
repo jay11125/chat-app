@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
+	<meta charset="UTF-8" />
 	<link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
 	<link rel="stylesheet" href="./css/styles.css" />
+
 	<head>
 		<title>Chat App</title>
 	</head>
+
 	<body>
 		<div class="chat">
 			<div id="sidebar" class="chat__sidebar"></div>
@@ -22,54 +25,50 @@
 							name="message"
 							placeholder="Message"
 							autocomplete="off"
-							onkeyup="manage(this)"
 						/>
-						<button id="send-message" disabled= >Send</button>
+						<button type="submit" id="send-message">Send</button>
 					</form>
 					<button id="send-location">Send Location</button>
 				</div>
 			</div>
 		</div>
 
-		<script>
-			function manage(txt) {
-				var bt = document.getElementById('send-message');
-				if (txt.value != '') {
-					bt.disabled = false;
-				}
-				else {
-					bt.disabled = true;
-				}
-   			}		 
-		</script>
-
 		<script id="message-template" type="text/html">
-			<div class="message">
-				<p>
-					<span class="message__name">{{username}}</span>
-					<span class="message__meta">{{createdAt}}</span>
-				</p>
-				<p>{{message}}</p>
+			<div class="message-container">
+				<div class="message">
+					<p>
+						<span class="message__name">{{username}}</span>
+						<span class="message__meta">{{createdAt}}</span>
+					</p>
+					<p>{{message}}</p>
+				</div>
 			</div>
 		</script>
 		<script id="location-template" type="text/html">
-			<div class="message">
-				<p>
-					<span class="message__name">{{username}}</span>
-					<span class="message__meta">{{createdAt}}</span>
-				</p>
-				<p><a href="{{url}}" target="_blank">My Current Location</a></p>
+			<div class="message-container">
+				<div class="message">
+					<p>
+						<span class="message__name">{{username}}</span>
+						<span class="message__meta">{{createdAt}}</span>
+					</p>
+					<p><a href="{{url}}" target="_blank">My Current Location</a></p>
+				</div>
 			</div>
 		</script>
 		<script id="sidebar-template" type="text/html">
-			<div class="title" style="background-color: #64e6b0;margin:0;padding:16px">
+			<div class="title head">
 				<img src="./images/icon.png" alt="icon" />
 				<h1>Chat App</h1>
 			</div>
 			<h3 class="list-title">Room:</h3>
 			<h2 class="room-title">{{room}}</h2>
 			<div class="title list-title">
-				<img src="./images/active.png" height="22px" width="22px" style="align-self: center;margin-left: 10px;">
+				<img
+					src="./images/active.png"
+					height="22px"
+					width="22px"
+					style="align-self: center;margin-left: 10px;"
+				/>
 				<h3>Online Users:</h3>
 			</div>
 			<ul class="users">

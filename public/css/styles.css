@@ -18,6 +18,14 @@ body {
 	display: flex;
 	margin: 7px 2px 16px 16px;
 }
+.head {
+	background-color: #56ff7b;
+	margin: 0;
+	padding: 16px;
+	color: black;
+	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+		"Lucida Sans", Arial, sans-serif;
+}
 h1 {
 	padding-left: 0.3em;
 	align-self: center;
@@ -109,7 +117,7 @@ button:disabled {
 .chat__sidebar {
 	height: 100vh;
 	color: #fff;
-	background: #484e5e;
+	background: #ffffff;
 	width: 28vw;
 	overflow-y: scroll;
 }
@@ -129,20 +137,31 @@ button:disabled {
 	padding: 24px 24px 0 24px;
 	overflow-y: scroll;
 }
+
+.message-container {
+	display: flex;
+}
+.pushRight {
+	justify-content: flex-end;
+}
+.demo1 {
+	background-color: red;
+}
 .message {
+	font-weight: normal;
 	padding: 1em;
-	background-color: #92eee6ec;
+	background-color: rgb(255, 255, 255);
 	border: 1px solid #777;
 	border-radius: 20px;
 	width: fit-content;
 	min-width: 10vw;
-	max-width: 60vw;
+	max-width: 55vw;
 	overflow-wrap: break-word;
 	word-wrap: break-word;
-	margin-bottom: 16px;
+	margin-bottom: 10px;
 }
 .message__name {
-	font-weight: 600;
+	font-weight: 1000;
 	font-size: 14px;
 	margin-right: 8px;
 }
@@ -175,12 +194,14 @@ button:disabled {
 	font-size: 14px;
 }
 .room-title {
-	font-weight: 400;
+	color: black;
+	font-weight: 1000;
 	font-size: 22px;
-	background: #2c2f3a;
+	background: rgb(235, 235, 235);
 	padding: 24px;
 }
 .list-title {
+	color: black;
 	margin-left: 12px;
 	font-weight: 500;
 	font-size: 22px;
@@ -188,14 +209,14 @@ button:disabled {
 	padding: 12px 24px 0 5px;
 }
 li {
-	color: greenyellow;
+	color: black;
 	margin: 16px;
 }
 .users {
 	list-style-type: none;
 	font-weight: 600;
 	font-style: italic;
-	background: #2c2f3a;
+	background: rgb(235, 235, 235);
 	padding: 12px 24px 24px 60px;
 }
 ::-webkit-scrollbar {

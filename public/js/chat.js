@@ -5,7 +5,7 @@ const $messageButton = document.querySelector("#send-message");
 const $locationButton = document.querySelector("#send-location");
 const $messages = document.querySelector("#messages");
 const $sidebar = document.querySelector("#sidebar");
-
+const $message = document.querySelector("message");
 const messageTemplate = document.querySelector("#message-template").innerHTML;
 const locationTemplate = document.querySelector("#location-template").innerHTML;
 const sidebarTemplate = document.querySelector("#sidebar-template").innerHTML;
@@ -44,6 +44,7 @@ socket.on("message", (message) => {
 		createdAt: moment(message.createdAt).format("h:mm a"),
 	});
 	$messages.insertAdjacentHTML("beforeend", html);
+
 	autoscroll();
 });
 
@@ -67,15 +68,19 @@ socket.on("roomData", ({ users, room }) => {
 
 $messageButton.addEventListener("click", (e) => {
 	e.preventDefault();
-
-	$messageButton.setAttribute("disabled", "disabled");
 	const message = document.getElementById("message").value;
 
-	socket.emit("sendMessage", message, () => {
-		$messageButton.removeAttribute("disabled");
-		$messageInput.value = "";
-		$messageInput.focus();
-	});
+	if (message !== "") {
+		$messageButton.setAttribute("disabled", "disabled");
+		socket.emit("sendMessage", message, () => {
+			$messageButton.removeAttribute("disabled");
+			$messageInput.value = "";
+			$messageInput.focus();
+			document
+				.getElementById("messages")
+				.lastElementChild.classList.add("pushRight");
+		});
+	}
 });
 
 $locationButton.addEventListener("click", (e) => {
@@ -94,6 +99,10 @@ $locationButton.addEventListener("click", (e) => {
 				longitude: position.coords.longitude,
 			},
 			() => {
+				document
+					.getElementById("messages")
+					.lastElementChild.classList.add("pushRight");
+
 				$locationButton.removeAttribute("disabled");
 			}
 		);

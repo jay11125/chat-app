@@ -43,8 +43,8 @@ socket.on("message", (message) => {
 		message: message.text,
 		createdAt: moment(message.createdAt).format("h:mm a"),
 	});
-	$messages.insertAdjacentHTML("beforeend", html);
 
+	$messages.insertAdjacentHTML("beforeend", html);
 	autoscroll();
 });
 
@@ -79,6 +79,9 @@ $messageButton.addEventListener("click", (e) => {
 			document
 				.getElementById("messages")
 				.lastElementChild.classList.add("pushRight");
+			document
+				.getElementById("messages")
+				.lastElementChild.firstElementChild.classList.add("myMessage");
 		});
 	}
 });
@@ -102,7 +105,9 @@ $locationButton.addEventListener("click", (e) => {
 				document
 					.getElementById("messages")
 					.lastElementChild.classList.add("pushRight");
-
+				document
+					.getElementById("messages")
+					.lastElementChild.firstElementChild.classList.add("myMessage");
 				$locationButton.removeAttribute("disabled");
 			}
 		);

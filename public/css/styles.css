@@ -46,7 +46,7 @@ button {
 	padding: 12px;
 	background: #56ff7b;
 	border: none;
-	color: #fff;
+	color: black;
 	font-size: 16px;
 	transition: background 0.2s ease;
 }
@@ -245,4 +245,7 @@ li {
 }
 .tooltip {
 	display: none;
+}
+.myMessage {
+	background-color: #84ff9ff6;
 }

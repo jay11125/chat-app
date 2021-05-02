@@ -131,6 +131,7 @@ button:disabled {
 	padding: 8px;
 	display: flex;
 	flex-direction: column;
+	justify-content: space-evenly;
 	background-color: transparent;
 	color: white;
 	cursor: pointer;

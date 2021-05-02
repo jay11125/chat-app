@@ -126,19 +126,7 @@ button:disabled {
 	background-color: #56ff7b;
 	padding: 6px;
 }
-#menuButton {
-	margin: 8px 6px 0px 0px;
-	padding: 8px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-	background-color: transparent;
-	color: white;
-	cursor: pointer;
-}
-#menuButton:hover {
-	background-color: #64c284;
-}
+
 @media (max-width: 768px) {
 	.head {
 		display: none;
@@ -179,6 +167,18 @@ button:disabled {
 		width: 90%;
 		height: 3px;
 		background-color: white;
+	}
+	#menuButton {
+		margin: 8px 6px 0px 0px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-evenly;
+		background-color: transparent;
+		color: white;
+		cursor: pointer;
+	}
+	#menuButton:hover {
+		background-color: #64c284;
 	}
 }
 .chat__main {

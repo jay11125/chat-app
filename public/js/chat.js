@@ -118,12 +118,11 @@ socket.emit("join", { username, room });
 
 const $menuButton = document.getElementById("menuButton");
 
-const x = $menuButton.innerHTML;
 $menuButton.addEventListener("click", () => {
 	document.querySelector(".chat__sidebar").classList.toggle("menu");
 
 	if ($menuButton.innerHTML === "Close") {
-		$menuButton.innerHTML = x;
+		$menuButton.innerHTML = "Users";
 	} else {
 		$menuButton.innerHTML = "Close";
 	}

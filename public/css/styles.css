@@ -166,6 +166,7 @@ button:disabled {
 	.drawer > div {
 		width: 90%;
 		height: 3px;
+		margin-top: 3px;
 		background-color: white;
 	}
 	#menuButton {

@@ -75,11 +75,10 @@ button:disabled {
 }
 .centered-form__box {
 	box-shadow: 0 0 17px 1px #1d1f26;
-	background: #f7faf8;
+	background: hsl(140, 23%, 97%);
 	padding: 24px;
 	width: 330px;
 }
-
 #room-select {
 	color: #3d3d3d;
 	margin-left: 0.5em;
@@ -112,6 +111,7 @@ button:disabled {
 	background-color: #ddd;
 }
 .chat {
+	max-height: 100vh;
 	display: flex;
 }
 .chat__sidebar {
@@ -120,6 +120,63 @@ button:disabled {
 	background: #ffffff;
 	width: 28vw;
 	overflow-y: scroll;
+}
+.header {
+	display: none;
+	background-color: #56ff7b;
+	padding: 6px;
+}
+#menuButton {
+	margin: 8px 6px 0px 0px;
+	padding: 8px;
+	background-color: transparent;
+	color: white;
+	cursor: pointer;
+}
+#menuButton:hover {
+	background-color: #64c284;
+}
+@media (max-width: 768px) {
+	.head {
+		display: none;
+	}
+	.chat__main {
+		min-height: 100vh;
+		max-height: 100vh;
+	}
+	.chat__sidebar {
+		width: 62vw;
+		height: max-content;
+		max-height: 500px;
+		border: 0.5px solid rgb(146, 146, 146);
+		border-radius: 10px;
+		display: none;
+		position: absolute;
+		left: 36%;
+		top: 12%;
+	}
+	.header {
+		position: relative;
+		display: flex;
+		justify-content: space-between;
+	}
+	.menu {
+		display: block;
+	}
+	.drawer {
+		width: 50px;
+		height: 75%;
+		display: flex;
+		justify-content: space-around;
+		flex-flow: column;
+		align-items: center;
+		box-sizing: border-box;
+	}
+	.drawer div {
+		width: 90%;
+		height: 3px;
+		background-color: white;
+	}
 }
 .chat__main {
 	background-color: #e5e5f7;
